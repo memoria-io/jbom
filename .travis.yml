@@ -8,8 +8,6 @@ cache:
   - "$HOME/.m2"
 before_install:
 - openssl aes-256-cbc -K $encrypted_c4a11a42d40f_key -iv $encrypted_c4a11a42d40f_iv
-  -in marmoush.com.gpg.enc -out deploy/marmoush.com.gpg -d
-- openssl aes-256-cbc -K $encrypted_d9f9cea8be1e_key -iv $encrypted_d9f9cea8be1e_iv
   -in deploy/marmoush.com.gpg.enc -out deploy/marmoush.com.gpg -d
 - gpg --import deploy/marmoush.com.gpg
 after_success:
