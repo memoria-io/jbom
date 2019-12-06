@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.1.9</version>
+    <version>0.2.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -245,6 +245,11 @@
         <dependency>
             <groupId>io.projectreactor.netty</groupId>
             <artifactId>reactor-netty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.kafka</groupId>
+            <artifactId>reactor-kafka</artifactId>
+            <version>1.1.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
