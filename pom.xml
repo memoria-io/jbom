@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -29,7 +29,8 @@
 
         <!-- Plugins -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0-M4</maven-failsafe-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
 
         <!-- Reporting Plugins-->
@@ -107,6 +108,9 @@
 
     <build>
         <plugins>
+            <!--======================================================================================== -->
+            <!-- Building Plugins   -->
+            <!--======================================================================================== -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>${maven-assembly-plugin.version}</version>
@@ -141,8 +145,9 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
-
+            <!--======================================================================================== -->
             <!-- Documentation Plugins-->
+            <!--======================================================================================== -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -179,8 +184,9 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Testing Plugins -->
+            <!--======================================================================================== -->
+            <!-- Unit Testing Plugins -->
+            <!--======================================================================================== -->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
@@ -198,6 +204,25 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
             </plugin>
+            <!--======================================================================================== -->
+            <!-- Integration Test Plugins  -->
+            <!--======================================================================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--======================================================================================== -->
+            <!-- Finding Bugs and Quality Plugins  -->
+            <!--======================================================================================== -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -327,6 +352,9 @@
 
     <profiles>
         <profile>
+            <!--======================================================================================== -->
+            <!-- Sonar Profile   -->
+            <!--======================================================================================== -->
             <id>sonar</id>
             <build>
                 <plugins>
@@ -347,6 +375,9 @@
             </build>
         </profile>
         <profile>
+            <!--======================================================================================== -->
+            <!-- Local Deployment Profile   -->
+            <!--======================================================================================== -->
             <id>local_deployment</id>
             <build>
                 <plugins>
@@ -379,6 +410,9 @@
             </build>
         </profile>
         <profile>
+            <!--======================================================================================== -->
+            <!-- Travis Deployment Profile   -->
+            <!--======================================================================================== -->
             <id>travis_deployment</id>
             <properties>
                 <gpg.executable>gpg</gpg.executable>
