@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.2.4</version>
+    <version>0.2.5</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
