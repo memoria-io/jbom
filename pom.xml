@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.2.6</version>
+    <version>0.2.7</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -31,7 +31,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.0.0-M4</maven-failsafe-plugin.version>
-        <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+        <maven-assembly-plugin.version>3.2.0</maven-assembly-plugin.version>
 
         <!-- Reporting Plugins-->
         <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
@@ -112,6 +112,7 @@
             <!-- Building Plugins   -->
             <!--======================================================================================== -->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>${maven-assembly-plugin.version}</version>
             </plugin>
@@ -122,6 +123,7 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <compilerArgument>--enable-preview</compilerArgument>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
                     <compilerArgs>
