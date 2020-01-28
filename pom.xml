@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.2.8</version>
+    <version>0.2.9</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -130,6 +130,7 @@
                     <showWarnings>true</showWarnings>
                     <compilerArgs>
                         <compilerArgument>--enable-preview</compilerArgument>
+                        <arg>--enable-preview</arg>
                         <!-- <arg>-Werror</arg> -->
                         <!--<arg>-Xlint:serial</arg>-->
                         <arg>-Xlint:cast</arg>
