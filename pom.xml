@@ -10,8 +10,8 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.3.0</version>
-    <packaging>pom</packaging>
+    <version>0.3.1</version>
+    <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
     <description>Java Bom</description>
