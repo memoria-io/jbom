@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.3.2</version>
+    <version>0.3.3</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -24,7 +24,6 @@
     <properties>
         <!--Java and Maven -->
         <java.version>13</java.version>
-        <argLine>--enable-preview</argLine>
         <maven.version>3.6.1</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -129,8 +128,6 @@
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
                     <compilerArgs>
-                        <compilerArgument>--enable-preview</compilerArgument>
-                        <arg>--enable-preview</arg>
                         <!-- <arg>-Werror</arg> -->
                         <!--<arg>-Xlint:serial</arg>-->
                         <arg>-Xlint:cast</arg>
