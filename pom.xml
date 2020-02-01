@@ -10,7 +10,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.3.4</version>
+    <version>0.3.5</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -231,11 +231,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-plugin.version}</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/Main.java</exclude>
-                    </excludes>
-                </configuration>
                 <executions>
                     <execution>
                         <id>jacoco-create-exec-files</id>
