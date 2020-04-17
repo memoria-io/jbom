@@ -1,20 +1,18 @@
-name: Publish
+name: publish
 
 on:
   push:
-    branches:
-      - master
     tags:
       - v*.*.*
 
 jobs:
-  push:
+  publish:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy
+      - name: publish
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}

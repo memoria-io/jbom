@@ -1,4 +1,4 @@
-name: Test
+name: build
 
 on:
   push:
@@ -6,12 +6,12 @@ on:
       - master
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v2
-      - name: Test
+      - name: build
         run: |
           mvn install
