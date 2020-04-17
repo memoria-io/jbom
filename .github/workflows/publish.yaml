@@ -1,0 +1,24 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FILE_ENCRYPTION_PASSWORD }}" --output github_deploy/marmoush.com.gpg github_deploy/marmoush.com.gpg.gpg
+          gpg --import github_deploy/marmoush.com.gpg
+          mvn deploy --settings github_deploy/maven-settings.xml -P cloud_deployment
+        env:
+          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}

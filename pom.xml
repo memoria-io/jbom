@@ -427,9 +427,9 @@
         </profile>
         <profile>
             <!--======================================================================================== -->
-            <!-- Travis Deployment Profile   -->
+            <!-- cloud_deployment Deployment Profile   -->
             <!--======================================================================================== -->
-            <id>travis_deployment</id>
+            <id>cloud_deployment</id>
             <properties>
                 <gpg.executable>gpg</gpg.executable>
                 <gpg.defaultKeyring>true</gpg.defaultKeyring>
