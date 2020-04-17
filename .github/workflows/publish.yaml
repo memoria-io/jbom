@@ -27,4 +27,7 @@ jobs:
         run: gpg --import --no-tty --batch --yes github_deploy/marmoush.com.gpg
 
       - name: Deploy
-        run: mvn deploy --settings github_deploy/maven-settings.xml -P cloud_deployment
+        run: |
+        GPG_TTY=$(tty)
+        export GPG_TTY
+        mvn deploy --settings github_deploy/maven-settings.xml -P cloud_deployment
