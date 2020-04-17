@@ -14,8 +14,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: install
-        run: mvn install
       - name: Deploy
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
