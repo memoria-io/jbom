@@ -28,6 +28,6 @@ jobs:
 
       - name: Deploy
         run: |
-        GPG_TTY=$(tty)
-        export GPG_TTY
-        mvn deploy --settings github_deploy/maven-settings.xml -P cloud_deployment
+          GPG_TTY=$(tty || echo "")
+          export GPG_TTY
+          mvn deploy --settings github_deploy/maven-settings.xml -P cloud_deployment
