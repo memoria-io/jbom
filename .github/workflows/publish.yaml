@@ -24,9 +24,7 @@ jobs:
         run: gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FILE_ENCRYPTION_PASSWORD }}" --output github_deploy/marmoush.com.gpg github_deploy/marmoush.com.gpg.gpg
 
       - name: Import gpg
-        run: |
-        export GPG_TTY=$(tty)
-        gpg --import github_deploy/marmoush.com.gpg
+        run: gpg --import --no-tty --batch --yes github_deploy/marmoush.com.gpg
 
       - name: Deploy
         run: mvn deploy --settings github_deploy/maven-settings.xml -P cloud_deployment
