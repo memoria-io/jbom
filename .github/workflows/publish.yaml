@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Deploy
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
           GPG_KEYNAME: ${{ secrets.GPG_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-
-      - name: Deploy
         run: |
           GPG_TTY=$(tty || echo "")
           export GPG_TTY
