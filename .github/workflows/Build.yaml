@@ -21,6 +21,8 @@ jobs:
 
       - name: Push Docker image
         if: github.event_name == 'push'
-        run: docker push ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8}
+        run: |
+        docker push ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8}
+        docker push ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8} ${GITHUB_REPOSITORY,,}:latest
 
 
