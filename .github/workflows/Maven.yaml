@@ -2,6 +2,7 @@ name: Maven
 
 on:
   push:
+    branches: [ master ]
     tags:
       - v*.*.*
 
