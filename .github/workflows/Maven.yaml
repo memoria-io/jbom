@@ -1,4 +1,4 @@
-name: maven
+name: Maven
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - v*.*.*
 
 jobs:
-  publish:
+  Maven:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
