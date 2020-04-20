@@ -20,5 +20,6 @@ jobs:
 
       - name: Push image
         run: |
-          docker push ${GITHUB_REPOSITORY,,}:${{ GITHUB_RUN_ID }}
+          docker push ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8}
+
 
