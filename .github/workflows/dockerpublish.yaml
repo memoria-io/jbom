@@ -1,0 +1,24 @@
+name: Docker
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build . --tag ${GITHUB_REPOSITORY,,}
+
+      - name: Log into registry
+        run: echo "${{ secrets.DOCKER_USERNAME }}" | docker login -u ${{ secrets.DOCKER_PASSWORD }} --password-stdin
+
+      - name: Push image
+        run: |
+          docker push ${GITHUB_REPOSITORY,,}:latest
+
