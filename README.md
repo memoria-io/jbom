@@ -1,7 +1,7 @@
 # jbom
 
 [![build](https://github.com/IsmailMarmoush/jbom/workflows/build/badge.svg)](https://github.com/IsmailMarmoush/jbom/actions?query=workflow%3Abuild)
-[![publish](https://github.com/IsmailMarmoush/jbom/workflows/publish/badge.svg)](https://github.com/IsmailMarmoush/jbom/actions?query=workflow%3Apublish)
+[![publish](https://github.com/IsmailMarmoush/jbom/workflows/maven/badge.svg)](https://github.com/IsmailMarmoush/jbom/actions?query=workflow%3Amaven)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.marmoush/jbom/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/com.marmoush/jbom/)
 
 Bill of Materials for opensource projects (edge)

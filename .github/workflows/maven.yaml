@@ -1,4 +1,4 @@
-name: publish
+name: maven
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: publish
+      - name: Publish to Maven
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
