@@ -26,7 +26,7 @@
         <java.version>14</java.version>
         <maven.version>3.6.3</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+        <argLine>--enable-preview</argLine>
         <!-- Plugins -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
@@ -39,7 +39,7 @@
 
         <!-- Testing Plugins -->
         <maven-sonar-plugin.version>3.6.0.1398</maven-sonar-plugin.version>
-        <jacoco-plugin.version>0.8.4</jacoco-plugin.version>
+        <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
 
@@ -203,7 +203,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <argLine>--enable-preview</argLine>
                     <includes>
                         <include>**/Test*.java</include>
                         <include>**/*Test.java</include>
@@ -232,9 +231,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <argLine>--enable-preview</argLine>
-                </configuration>
             </plugin>
             <!--======================================================================================== -->
             <!-- Finding Bugs and Quality Plugins  -->
