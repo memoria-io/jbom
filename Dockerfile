@@ -1,4 +1,4 @@
-FROM ismailmarmoush/java-docker:latest
+FROM memoriaio/java-docker:latest
 ADD . /jbom
 WORKDIR /jbom
 RUN ls

@@ -27,7 +27,7 @@ jobs:
           mvn deploy --settings $DEPLOY_DIR/maven-settings.xml -P cloud_deployment
 
       - name: Build image
-        run: docker build . --tag ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8}
+        run: docker build . --tag memoriaio/jbom:${GITHUB_SHA::8}
 
       - name: Log into registry
         if: github.event_name == 'push'
@@ -36,6 +36,6 @@ jobs:
       - name: Push Docker image
         if: github.event_name == 'push'
         run: |
-          docker tag ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8} ${GITHUB_REPOSITORY,,}:latest
-          docker push ${GITHUB_REPOSITORY,,}:${GITHUB_SHA::8}
-          docker push ${GITHUB_REPOSITORY,,}:latest
+          docker tag memoriaio/jbom:${GITHUB_SHA::8} ${GITHUB_REPOSITORY,,}:latest
+          docker push memoriaio/jbom:${GITHUB_SHA::8}
+          docker push memoriaio/jbom:latest
