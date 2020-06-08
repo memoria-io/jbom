@@ -10,14 +10,14 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.6.1</version>
+    <version>0.6.4</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
     <description>Java Bom</description>
     <url>https://memoria.io</url>
     <organization>
-        <name>memoria-io</name>
+        <name>memoria.io</name>
         <url>https://memoria.io</url>
     </organization>
 
