@@ -37,6 +37,6 @@ jobs:
       - name: Push Docker image
         if: github.event_name == 'push'
         run: |
-          docker tag memoriaio/jbom:${GITHUB_SHA::8} ${GITHUB_REPOSITORY,,}:latest
+          docker tag memoriaio/jbom:${GITHUB_SHA::8} memoriaio/jbom:latest
           docker push memoriaio/jbom:${GITHUB_SHA::8}
           docker push memoriaio/jbom:latest
