@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.7.4</version>
+    <version>0.7.5</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -44,10 +44,10 @@
         </sonar.coverage.jacoco.xmlReportPaths>
 
         <!--Compile Deps-->
-        <reactor.version>Dysprosium-SR9</reactor.version>
-        <vavr.version>0.10.2</vavr.version>
+        <reactor.version>Dysprosium-SR11</reactor.version>
+        <vavr.version>0.10.3</vavr.version>
         <gson.version>2.8.6</gson.version>
-        <yamlbeans.version>1.14</yamlbeans.version>
+        <yamlbeans.version>1.15</yamlbeans.version>
         <logging.version>2.13.3</logging.version>
         <argon2.version>2.7</argon2.version>
 
@@ -299,7 +299,7 @@
         <dependency>
             <groupId>io.vavr</groupId>
             <artifactId>vavr-gson</artifactId>
-            <version>${vavr.version}</version>
+            <version>0.10.2</version>
         </dependency>
         <!--======================================================================================== -->
         <!-- Json Dependencies -->
