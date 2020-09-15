@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.8.0</version>
+    <version>0.9.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -121,8 +121,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>14</source>
-                    <target>14</target>
+                    <source>15</source>
+                    <target>15</target>
                     <release>${java.version}</release>
                     <fork>true</fork>
                     <showDeprecation>true</showDeprecation>
