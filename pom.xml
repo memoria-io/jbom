@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.9.0</version>
+    <version>0.12.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -39,7 +39,7 @@
 
         <!-- Testing Plugins -->
         <maven-sonar-plugin.version>3.6.0.1398</maven-sonar-plugin.version>
-        <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
+        <jacoco-plugin.version>0.8.6</jacoco-plugin.version>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
 
@@ -105,6 +105,29 @@
             </snapshots>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <plugins>
@@ -123,7 +146,7 @@
                 <configuration>
                     <source>15</source>
                     <target>15</target>
-                    <release>${java.version}</release>
+                    <release>15</release>
                     <fork>true</fork>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
@@ -190,6 +213,7 @@
                 <configuration>
                     <source>${java.version}</source>
                     <release>${java.version}</release>
+                    <doclint>all,-missing</doclint>
                     <additionalOptions>
                         <additionalOption>--enable-preview</additionalOption>
                     </additionalOptions>
