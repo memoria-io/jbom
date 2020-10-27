@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.15.0</version>
+    <version>0.16.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -44,7 +44,7 @@
         </sonar.coverage.jacoco.xmlReportPaths>
 
         <!--Compile Deps-->
-        <reactor.version>Dysprosium-SR11</reactor.version>
+        <reactor.version>2020.0.0</reactor.version>
         <vavr.version>0.10.3</vavr.version>
         <logging.version>2.13.3</logging.version>
 
