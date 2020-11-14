@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.16.0</version>
+    <version>0.17.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -347,11 +347,11 @@
     </dependencies>
 
     <profiles>
+        <!--======================================================================================== -->
+        <!-- Sonar Local Profile   -->
+        <!--======================================================================================== -->
         <profile>
-            <!--======================================================================================== -->
-            <!-- Sonar Profile   -->
-            <!--======================================================================================== -->
-            <id>sonar</id>
+            <id>sonar_local</id>
             <build>
                 <plugins>
                     <plugin>
@@ -370,10 +370,39 @@
                 </plugins>
             </build>
         </profile>
+        <!--======================================================================================== -->
+        <!-- Sonar Cloud Profile   -->
+        <!--======================================================================================== -->
         <profile>
-            <!--======================================================================================== -->
-            <!-- Local Deployment Profile   -->
-            <!--======================================================================================== -->
+            <id>sonar_cloud</id>
+            <properties>
+                <sonar.organization>memoriaio</sonar.organization>
+                <sonar.projectKey>memoriaio_${project.artifactId}</sonar.projectKey>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+                <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <version>${maven-sonar-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sonar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!--======================================================================================== -->
+        <!-- Local Deployment Profile   -->
+        <!--======================================================================================== -->
+        <profile>
             <id>local_deployment</id>
             <build>
                 <plugins>
@@ -406,10 +435,10 @@
                 </plugins>
             </build>
         </profile>
+        <!--======================================================================================== -->
+        <!-- cloud_deployment Deployment Profile   -->
+        <!--======================================================================================== -->
         <profile>
-            <!--======================================================================================== -->
-            <!-- cloud_deployment Deployment Profile   -->
-            <!--======================================================================================== -->
             <id>cloud_deployment</id>
             <properties>
                 <gpg.executable>gpg</gpg.executable>
