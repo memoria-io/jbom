@@ -29,17 +29,3 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FILE_ENCRYPTION_PASSWORD }}" --output $DEPLOY_DIR/marmoush.com.gpg $DEPLOY_DIR/marmoush.com.gpg.gpg
           gpg --import --no-tty --batch --yes $DEPLOY_DIR/marmoush.com.gpg
           mvn deploy --settings $DEPLOY_DIR/maven-settings.xml -P cloud_deployment
-
-      - name: Build image
-        run: docker build . --tag memoriaio/jbom:${GITHUB_SHA::8}
-
-      - name: Log into registry
-        if: github.event_name == 'push'
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-
-      - name: Push Docker image
-        if: github.event_name == 'push'
-        run: |
-          docker tag memoriaio/jbom:${GITHUB_SHA::8} memoriaio/jbom:latest
-          docker push memoriaio/jbom:${GITHUB_SHA::8}
-          docker push memoriaio/jbom:latest
