@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.22.0</version>
+    <version>0.23.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -383,6 +383,10 @@
         <!--======================================================================================== -->
         <profile>
             <id>sonar_local</id>
+            <properties>
+                <sonar.login>admin</sonar.login>
+                <sonar.password>admin</sonar.password>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
