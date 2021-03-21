@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.25.0</version>
+    <version>0.26.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -23,7 +23,7 @@
 
     <properties>
         <!--Java and Maven -->
-        <java.version>15</java.version>
+        <java.version>16</java.version>
         <maven.version>3.6.3</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <argLine>--enable-preview</argLine>
@@ -163,9 +163,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
-                    <release>15</release>
+                    <source>16</source>
+                    <target>16</target>
+                    <release>16</release>
                     <fork>true</fork>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
