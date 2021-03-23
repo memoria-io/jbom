@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.27.0</version>
+    <version>0.28.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -32,7 +32,7 @@
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-gpg.version>1.6</maven-gpg.version>
-        <maven-nexus-staging.version>1.6.7</maven-nexus-staging.version>
+        <maven-nexus-staging.version>1.6.8</maven-nexus-staging.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
@@ -420,7 +420,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>${maven-nexus-staging.version}</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
