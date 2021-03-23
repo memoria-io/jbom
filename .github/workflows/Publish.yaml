@@ -15,6 +15,11 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '16'
+      - name: check java
+        run: |
+          java --version
+          mvn --version
+          echo $JAVA_HOME        
       - name: Publish to Maven
         timeout-minutes: 20
         env:
