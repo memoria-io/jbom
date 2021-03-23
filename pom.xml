@@ -10,7 +10,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>0.30.0</version>
+    <version>v0.31.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
