@@ -20,7 +20,7 @@ jobs:
           java --version
           mvn --version
           echo $JAVA_HOME        
-      - name: Publish to Maven
+      - name: Publish to Github Packages
         timeout-minutes: 10
         run: mvn --batch-mode deploy
         env:
