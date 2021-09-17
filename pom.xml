@@ -47,7 +47,7 @@
         <logging.version>2.14.1</logging.version>
 
         <!--Test Deps-->
-        <junit.jupiter.version>5.8.0-M1</junit.jupiter.version>
+        <junit.jupiter.version>5.8.0</junit.jupiter.version>
     </properties>
 
     <distributionManagement>
