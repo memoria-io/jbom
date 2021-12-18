@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>17.0.0</version>
+    <version>18.0.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -38,16 +38,16 @@
         <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
 
         <!-- Testing Plugins -->
-        <maven-sonar-plugin.version>3.9.0.2155</maven-sonar-plugin.version>
+        <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
         <jacoco-plugin.version>0.8.7</jacoco-plugin.version>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
 
         <!--Compile Deps-->
-        <logging.version>2.14.1</logging.version>
+        <logging.version>2.17.0</logging.version>
 
         <!--Test Deps-->
-        <junit.jupiter.version>5.8.0</junit.jupiter.version>
+        <junit.jupiter.version>5.8.2</junit.jupiter.version>
     </properties>
 
     <distributionManagement>
