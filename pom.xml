@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>20.0.1</version>
+    <version>20.1.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -25,7 +25,7 @@
         <!-- Plugins -->
         <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
         <maven-gpg.version>1.6</maven-gpg.version>
         <maven-nexus-staging.version>1.6.8</maven-nexus-staging.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
@@ -34,8 +34,8 @@
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
 
         <!-- Reporting Plugins-->
-        <maven-site-plugin.version>3.11.0</maven-site-plugin.version>
-        <maven-project-info-reports-plugin.version>3.2.2</maven-project-info-reports-plugin.version>
+        <maven-site-plugin.version>4.0.0-M1</maven-site-plugin.version>
+        <maven-project-info-reports-plugin.version>3.3.0</maven-project-info-reports-plugin.version>
 
         <!-- Testing Plugins -->
         <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
@@ -47,7 +47,7 @@
         <logging.version>2.17.2</logging.version>
 
         <!--Test Deps-->
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
+        <junit.jupiter.version>5.9.0-M1</junit.jupiter.version>
     </properties>
 
     <distributionManagement>
