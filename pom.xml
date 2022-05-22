@@ -11,31 +11,27 @@
     <name>${project.artifactId}</name>
     <description>Java Bom</description>
     <url>https://memoria.io</url>
+    
     <organization>
         <name>memoria.io</name>
         <url>https://memoria.io</url>
     </organization>
+    
     <properties>
         <!--Java and Maven -->
         <java.version>18</java.version>
-        <maven.version>3.8.5</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <argLine>--enable-preview</argLine>
+        <!--Compile dependencies -->
+        <logging.version>2.17.2</logging.version>
 
-        <!-- Plugins -->
-        <maven-gpg.version>1.6</maven-gpg.version>
-        <maven-nexus-staging.version>1.6.8</maven-nexus-staging.version>
+        <!--Test dependencies -->
+        <junit.jupiter.version>5.9.0-M1</junit.jupiter.version>
 
-        <!-- Testing Plugins -->
+        <!-- Testing plugins -->
         <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
-
-        <!--Compile Deps-->
-        <logging.version>2.17.2</logging.version>
-
-        <!--Test Deps-->
-        <junit.jupiter.version>5.9.0-M1</junit.jupiter.version>
     </properties>
 
     <distributionManagement>
@@ -82,6 +78,16 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
