@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>2022.18.0</version>
+    <version>2022.18.1</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -186,8 +186,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <source>${java.version}</source>
-                    <release>${java.version}</release>
+                    <source>18</source>
+                    <release>18</release>
                     <doclint>all,-missing</doclint>
                     <additionalOptions>
                         <additionalOption>--enable-preview</additionalOption>
