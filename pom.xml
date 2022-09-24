@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>2022.19.1</version>
+    <version>2022.19.2</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -167,6 +167,8 @@
                         <arg>-Xlint:varargs</arg>
                         <arg>-Xlint:-processing</arg>
                     </compilerArgs>
+                    <source>19</source>
+                    <target>19</target>
                 </configuration>
             </plugin>
             <!--======================================================================================== -->
