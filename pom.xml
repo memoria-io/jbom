@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>19.0.1</version>
+    <version>19.0.2</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -21,7 +21,6 @@
         <!-- Compile -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>19</java.version>
-        <logging.version>2.19.0</logging.version>
         <!-- Testing plugins -->
         <junit.jupiter.version>5.9.1</junit.jupiter.version>
         <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
@@ -283,25 +282,6 @@
     </build>
 
     <dependencies>
-        <!--======================================================================================== -->
-        <!-- Logging Dependencies -->
-        <!--======================================================================================== -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${logging.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${logging.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${logging.version}</version>
-        </dependency>
-
         <!--======================================================================================== -->
         <!-- Testing Dependencies -->
         <!--======================================================================================== -->
