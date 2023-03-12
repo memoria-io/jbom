@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>19.0.4</version>
+    <version>19.0.5</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -307,6 +307,15 @@
         </plugins>
     </build>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>3.24.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!--======================================================================================== -->
         <!-- Logging Dependencies -->
