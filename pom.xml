@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>19.0.5</version>
+    <version>20.0.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -20,14 +20,12 @@
     <properties>
         <!-- Compile -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>19</java.version>
+        <java.version>20</java.version>
         <logging.version>2.20.0</logging.version>
+        <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
         <!-- Testing plugins -->
         <junit.jupiter.version>5.9.2</junit.jupiter.version>
-        <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
-        <surefire.version>3.0.0-M9</surefire.version>
-        <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco/jacoco.xml
-        </sonar.coverage.jacoco.xmlReportPaths>
+        <surefire.version>3.0.0</surefire.version>
     </properties>
 
     <distributionManagement>
@@ -103,7 +101,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.3.0</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -113,17 +111,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>${maven-install-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>${maven-install-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>4.0.0-M5</version>
+                    <version>4.0.0-M6</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -352,65 +350,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <!--======================================================================================== -->
-        <!-- Sonar Local Profile   -->
-        <!--======================================================================================== -->
-        <profile>
-            <id>sonar_local</id>
-            <properties>
-                <sonar.login>admin</sonar.login>
-                <sonar.password>admin</sonar.password>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonarsource.scanner.maven</groupId>
-                        <artifactId>sonar-maven-plugin</artifactId>
-                        <version>${maven-sonar-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sonar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <!--======================================================================================== -->
-        <!-- Sonar Cloud Profile   -->
-        <!--======================================================================================== -->
-        <profile>
-            <id>sonar_cloud</id>
-            <properties>
-                <sonar.organization>memoria-io</sonar.organization>
-                <sonar.projectKey>memoria-io_${project.artifactId}</sonar.projectKey>
-                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-                <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonarsource.scanner.maven</groupId>
-                        <artifactId>sonar-maven-plugin</artifactId>
-                        <version>${maven-sonar-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sonar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
 
 
