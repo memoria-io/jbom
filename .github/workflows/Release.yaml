@@ -21,9 +21,8 @@ jobs:
         run: |
           java --version
           mvn --version
-          echo $JAVA_HOME        
       - name: Publish to Github Packages
         timeout-minutes: 10
-        run: mvn --batch-mode deploy
+        run: mvn -B deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
