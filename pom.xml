@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>21.0.5</version>
+    <version>21.1.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
