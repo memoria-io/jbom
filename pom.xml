@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>21.2.0</version>
+    <version>21.3.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -29,7 +29,7 @@
         <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
         <!-- Testing plugins -->
         <junit.jupiter.version>5.10.1</junit.jupiter.version>
-        <surefire.version>3.2.2</surefire.version>
+        <surefire.version>3.2.3</surefire.version>
     </properties>
 
     <distributionManagement>
@@ -355,14 +355,22 @@
                 <artifactId>log4j-slf4j2-impl</artifactId>
                 <version>${logging.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>3.24.2</version>
+                <scope>test</scope>
+            </dependency>
 
+            <dependency>
+                <groupId>org.awaitility</groupId>
+                <artifactId>awaitility</artifactId>
+                <version>4.2.0</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <dependency>
-            <groupId>io.vavr</groupId>
-            <artifactId>vavr</artifactId>
-        </dependency>
         <!--======================================================================================== -->
         <!-- Logging Dependencies -->
         <!--======================================================================================== -->
@@ -376,7 +384,7 @@
         <!--======================================================================================== -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
+            <artifactId>junit-jupiter</artifactId>
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
@@ -384,18 +392,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.24.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.awaitility</groupId>
-            <artifactId>awaitility</artifactId>
-            <version>4.2.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
