@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>21.5.0</version>
+    <version>21.6.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -318,6 +318,13 @@
                         <phase>post-integration-test</phase>
                         <goals>
                             <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-report-aggregate</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report-aggregate</goal>
                         </goals>
                     </execution>
                 </executions>
