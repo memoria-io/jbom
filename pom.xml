@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>21.7.0</version>
+    <version>21.8.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -201,7 +201,6 @@
                 <configuration>
                     <release>${java.version}</release>
                     <fork>true</fork>
-                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
                     <compilerArgs>
