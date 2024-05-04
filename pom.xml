@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>21.9.0</version>
+    <version>22.0.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -19,7 +19,7 @@
 
     <properties>
         <!-- Compile -->
-        <java.version>21</java.version>
+        <java.version>22</java.version>
         <!-- This allows surefire to work with jacoco in enable-preview mode -->
         <!-- Make sure Jacoco works with jdk version -->
         <argLine>--enable-preview</argLine>
