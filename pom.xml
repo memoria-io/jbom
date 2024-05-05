@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>22.0.0</version>
+    <version>22.0.1</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -28,7 +28,7 @@
         <logging.version>2.20.0</logging.version>
         <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
         <!-- Testing plugins -->
-        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+        <junit.jupiter.version>5.11.0-M1</junit.jupiter.version>
         <surefire.version>3.2.5</surefire.version>
     </properties>
 
