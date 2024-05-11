@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>22.0.1</version>
+    <version>22.1.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -63,78 +63,13 @@
         <pluginManagement>
             <plugins>
                 <!--======================================================================================== -->
-                <!-- Maven Plugins   -->
-                <!--======================================================================================== -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.4.1</version>
-                </plugin>
-
-                <!--======================================================================================== -->
-                <!-- Building Plugins   -->
+                <!-- Unimported here Plugins   -->
                 <!--======================================================================================== -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.7.1</version>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.13.0</version>
-                </plugin>
-                <!--======================================================================================== -->
-                <!-- Documentation Plugins-->
-                <!--======================================================================================== -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>4.0.0-M13</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.5.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>3.3.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.6.3</version>
-                </plugin>
-                <!--======================================================================================== -->
-                <!-- Testing Plugins-->
-                <!--======================================================================================== -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${surefire.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>${surefire.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>${surefire.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.12</version>
-                </plugin>
-
-                <!--======================================================================================== -->
-                <!-- Unimported here Plugins   -->
-                <!--======================================================================================== -->
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -160,6 +95,41 @@
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.3.2</version>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.3.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.6.3</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <release>${java.version}</release>
+                        <doclint>all,-missing</doclint>
+                        <additionalOptions>
+                            <additionalOption>--enable-preview</additionalOption>
+                        </additionalOptions>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -169,6 +139,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.4.1</version>
                 <executions>
                     <execution>
                         <id>enforce-versions</id>
@@ -194,11 +165,8 @@
             <!--======================================================================================== -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
                 <configuration>
                     <release>${java.version}</release>
                     <fork>true</fork>
@@ -226,48 +194,15 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <!--======================================================================================== -->
-            <!-- Documentation Plugins-->
-            <!--======================================================================================== -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
+                <version>4.0.0-M13</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <source>${java.version}</source>
-                    <release>${java.version}</release>
-                    <doclint>all,-missing</doclint>
-                    <additionalOptions>
-                        <additionalOption>--enable-preview</additionalOption>
-                    </additionalOptions>
-                </configuration>
+                <version>3.5.0</version>
             </plugin>
             <!--======================================================================================== -->
             <!-- Unit Testing Plugins -->
@@ -275,6 +210,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
                 <configuration>
                     <!-- Do not add argLine enable-preview here -->
                     <!-- https://www.eclemma.org/jacoco/trunk/doc/prepare-agent-mojo.html -->
@@ -289,10 +225,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${surefire.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${surefire.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -305,6 +243,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.12</version>
                 <executions>
                     <execution>
                         <id>jacoco-create-exec-files</id>
