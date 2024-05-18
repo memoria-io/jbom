@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>22.1.0</version>
+    <version>22.1.1</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -60,6 +60,7 @@
         </pluginRepository>
     </pluginRepositories>
     <build>
+        <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
         <pluginManagement>
             <plugins>
                 <!--======================================================================================== -->
@@ -67,13 +68,38 @@
                 <!--======================================================================================== -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.7.1</version>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.6.1</version>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        <excludeTransitive>false</excludeTransitive>
+                        <stripVersion>false</stripVersion>
+                        <prependGroupId>false</prependGroupId>
+                        <useRepositoryLayout>true</useRepositoryLayout>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.4.0</version>
+                    <version>3.4.1</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <classpathPrefix>lib/</classpathPrefix>
+                                <classpathLayoutType>repository</classpathLayoutType>
+                            </manifest>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -125,6 +151,7 @@
                         <source>${java.version}</source>
                         <release>${java.version}</release>
                         <doclint>all,-missing</doclint>
+                        <detectOfflineLinks>false</detectOfflineLinks>
                         <additionalOptions>
                             <additionalOption>--enable-preview</additionalOption>
                         </additionalOptions>
