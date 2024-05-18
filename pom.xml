@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>22.1.2</version>
+    <version>22.2.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -60,7 +60,6 @@
         </pluginRepository>
     </pluginRepositories>
     <build>
-        <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
         <pluginManagement>
             <plugins>
                 <!--======================================================================================== -->
