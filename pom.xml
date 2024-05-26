@@ -5,7 +5,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>22.2.0</version>
+    <version>22.3.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -28,7 +28,6 @@
         <logging.version>2.20.0</logging.version>
         <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
         <!-- Testing plugins -->
-        <junit.jupiter.version>5.11.0-M1</junit.jupiter.version>
         <surefire.version>3.2.5</surefire.version>
     </properties>
 
@@ -309,6 +308,14 @@
             <!-- Testing Dependencies -->
             <!--======================================================================================== -->
             <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.11.0-M2</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
                 <version>3.25.3</version>
@@ -349,14 +356,12 @@
         <!--======================================================================================== -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.jupiter.version}</version>
+            <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
