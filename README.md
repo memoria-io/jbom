@@ -35,7 +35,7 @@ As parent POM
 <parent>
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>20.1.0</version>
+    <version>24.2.0</version>
 </parent>
 ```
 
@@ -46,7 +46,7 @@ A BOM inside
 <dependency>
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>20.1.0</version>
+    <version>24.2.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>
