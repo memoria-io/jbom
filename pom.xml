@@ -6,7 +6,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>24.2.0</version>
+    <version>24.3.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -151,7 +151,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.13-SNAPSHOT</version>
+                    <version>0.8.13</version>
                     <executions>
                         <execution>
                             <id>jacoco-create-exec-files</id>
