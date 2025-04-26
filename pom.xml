@@ -6,7 +6,7 @@
 
     <groupId>io.memoria</groupId>
     <artifactId>jbom</artifactId>
-    <version>24.3.0</version>
+    <version>24.4.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -290,6 +290,21 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>publish</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <!--======================================================================================== -->
         <!-- Local Sonar Profile   -->
         <!--======================================================================================== -->
