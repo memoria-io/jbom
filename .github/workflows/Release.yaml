@@ -27,6 +27,6 @@ jobs:
           server-password-env-var: GITHUB_TOKEN
 
       - name: Publish
-        run: mvn --batch-mode --no-transfer-progress deploy
+        run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
