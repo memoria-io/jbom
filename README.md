@@ -1,6 +1,7 @@
-[![Release](https://github.com/ismailmarmoush/java-bom/workflows/Release/badge.svg)](https://github.com/ismailmarmoush/java-bom/actions?query=workflow%3ARelease)
+[![Release](https://github.com/ismailmarmoush/java-bom/actions/workflows/release.yml/badge.svg)](https://github.com/ismailmarmoush/java-bom/actions/workflows/release.yml)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ismailmarmoush/java-bom?label=Version&logo=github)](https://github.com/orgs/ismailmarmoush/packages?repo_name=java-bom)
-[![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/ismailmarmoush/java-bom/latest?logoColor=github)](https://github.com/ismailmarmoush/java-bom/commits/master)
+[![Commits since latest release](https://img.shields.io/github/commits-since/ismailmarmoush/java-bom/latest?logoColor=github)](https://github.com/ismailmarmoush/java-bom/commits/master)
+[![Version](https://img.shields.io/github/v/tag/ismailmarmoush/java-bom?label=Version&logo=github)](https://github.com/ismailmarmoush/java-bom/releases)
 
 # java-bom
 
