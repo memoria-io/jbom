@@ -1,14 +1,14 @@
-[![Release](https://github.com/memoria-io/jbom/workflows/Release/badge.svg)](https://github.com/memoria-io/jbom/actions?query=workflow%3ARelease)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/memoria-io/jbom?label=Version&logo=github)](https://github.com/orgs/memoria-io/packages?repo_name=jbom)
-[![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/memoria-io/jbom/latest?logoColor=github)](https://github.com/memoria-io/jbom/commits/master)
+[![Release](https://github.com/ismailmarmoush/java-bom/workflows/Release/badge.svg)](https://github.com/ismailmarmoush/java-bom/actions?query=workflow%3ARelease)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ismailmarmoush/java-bom?label=Version&logo=github)](https://github.com/orgs/ismailmarmoush/packages?repo_name=java-bom)
+[![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/ismailmarmoush/java-bom/latest?logoColor=github)](https://github.com/ismailmarmoush/java-bom/commits/master)
 
-# jbom
+# java-bom
 
-Bill of Materials for opensource projects (edge)
+Bill of Materials for java based projects (edge)
 
 ## Usage
 
-The jbom is published to Github in order to use it you need to make sure to add the following in your POM
+The java-bom is published to Github in order to use it you need to make sure to add the following in your POM
 
 ```xml
 
@@ -16,7 +16,7 @@ The jbom is published to Github in order to use it you need to make sure to add 
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/memoria-io/*</url>
+            <url>https://maven.pkg.github.com/ismailmarmoush/*</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -33,9 +33,9 @@ As parent POM
 
 ```xml
 <parent>
-    <groupId>io.memoria</groupId>
-    <artifactId>jbom</artifactId>
-    <version>24.2.0</version>
+    <groupId>com.marmoush</groupId>
+    <artifactId>java-bom</artifactId>
+    <version>26.0.0</version>
 </parent>
 ```
 
@@ -44,9 +44,9 @@ A BOM inside
 
 ```xml
 <dependency>
-    <groupId>io.memoria</groupId>
-    <artifactId>jbom</artifactId>
-    <version>24.2.0</version>
+    <groupId>com.marmoush</groupId>
+    <artifactId>java-bom</artifactId>
+    <version>26.0.0</version>
     <type>pom</type>
     <scope>import</scope>
 </dependency>

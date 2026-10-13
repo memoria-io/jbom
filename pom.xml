@@ -4,23 +4,23 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.memoria</groupId>
-    <artifactId>jbom</artifactId>
-    <version>25.0.0</version>
+    <groupId>com.marmoush</groupId>
+    <artifactId>java-bom</artifactId>
+    <version>26.0.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
     <description>Java Bom</description>
-    <url>https://memoria.io</url>
+    <url>https://marmoush.com</url>
 
     <organization>
-        <name>memoria.io</name>
-        <url>https://memoria.io</url>
+        <name>marmoush.com</name>
+        <url>https://marmoush.com</url>
     </organization>
 
     <properties>
         <!-- Compile -->
-        <java.version>25</java.version>
+        <java.version>26</java.version>
         <!-- This allows surefire to work with jacoco in enable-preview mode -->
         <!-- Make sure Jacoco works with jdk version -->
         <argLine>--enable-preview</argLine>
@@ -55,12 +55,12 @@
     <distributionManagement>
         <site>
             <id>${project.artifactId}-site</id>
-            <url>ftp://memoria.io/</url>
+            <url>ftp://marmoush.com/</url>
         </site>
         <repository>
-            <id>github</id>
+            <id>github-java-bom</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/memoria-io/jbom</url>
+            <url>https://maven.pkg.github.com/ismailmarmoush/java-bom</url>
         </repository>
     </distributionManagement>
 
