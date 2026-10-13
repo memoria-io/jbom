@@ -6,7 +6,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>java-bom</artifactId>
-    <version>26.0.1</version>
+    <version>26.0.2</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -27,9 +27,9 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <logging.version>2.20.0</logging.version>
-        <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
+        <maven-install-plugin.version>3.2.0</maven-install-plugin.version>
         <!-- Testing plugins -->
-        <surefire.version>3.5.2</surefire.version>
+        <surefire.version>3.6.0</surefire.version>
     </properties>
 
     <repositories>
@@ -65,7 +65,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.11.0</version>
                     <configuration>
                         <outputDirectory>${project.build.directory}/lib</outputDirectory>
                         <excludeTransitive>false</excludeTransitive>
@@ -87,7 +87,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -102,13 +102,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.4.1</version>
+                    <version>3.5.0</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.4.0</version>
                     <executions>
                         <execution>
                             <id>attach-sources</id>
@@ -121,7 +121,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.11.2</version>
+                    <version>3.12.0</version>
                     <executions>
                         <execution>
                             <id>attach-javadocs</id>
@@ -143,7 +143,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.13</version>
+                    <version>0.8.15</version>
                     <executions>
                         <execution>
                             <id>jacoco-create-exec-files</id>
@@ -177,7 +177,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.3</version>
                 <executions>
                     <execution>
                         <id>enforce-versions</id>
@@ -204,7 +204,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
+                <version>3.16.0</version>
                 <configuration>
                     <release>${java.version}</release>
                     <fork>true</fork>
@@ -316,7 +316,7 @@
                     <plugin>
                         <groupId>org.sonarsource.scanner.maven</groupId>
                         <artifactId>sonar-maven-plugin</artifactId>
-                        <version>5.0.0.4389</version>
+                        <version>5.8.0.7211</version>
                         <executions>
                             <execution>
                                 <phase>verify</phase>
