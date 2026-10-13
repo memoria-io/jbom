@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
 
     steps:
@@ -23,8 +23,8 @@ jobs:
           java-version: '26'
           cache: maven
           server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
+          server-username-env-var: GITHUB_ACTOR
+          server-password-env-var: GITHUB_TOKEN
 
       - name: Publish
         run: mvn --batch-mode --no-transfer-progress deploy
