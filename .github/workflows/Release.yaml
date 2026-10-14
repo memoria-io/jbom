@@ -24,11 +24,13 @@ jobs:
           distribution: temurin
           java-version: '26'
           cache: maven
-          server-id: github
-          server-username-env-var: GITHUB_ACTOR
-          server-password-env-var: GITHUB_TOKEN
+          server-id: central
+          server-username-env-var: CENTRAL_USERNAME
+          server-password-env-var: CENTRAL_PASSWORD
+          gpg-passphrase-env-var: MAVEN_GPG_PASSPHRASE
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
 
       - name: Publish
-        run: mvn --batch-mode deploy
+        run: mvn --batch-mode -Pcentral deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
