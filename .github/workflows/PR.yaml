@@ -3,6 +3,8 @@ name: PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    paths-ignore:
+      - 'README.md'
 
 permissions:
   contents: read
