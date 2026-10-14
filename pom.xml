@@ -6,7 +6,7 @@
 
     <groupId>com.marmoush</groupId>
     <artifactId>java-bom</artifactId>
-    <version>26.0.2</version>
+    <version>26.0.3</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -382,7 +382,6 @@
                                         <arg>--pinentry-mode</arg>
                                         <arg>loopback</arg>
                                     </gpgArguments>
-                                    <passphrase>${env.MAVEN_GPG_PASSPHRASE}</passphrase>
                                 </configuration>
                             </execution>
                         </executions>
