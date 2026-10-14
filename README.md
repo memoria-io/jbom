@@ -1,6 +1,9 @@
 [![Release](https://github.com/ismailmarmoush/java-bom/workflows/Release/badge.svg)](https://github.com/ismailmarmoush/java-bom/actions?query=workflow%3ARelease)
 [![Version](https://img.shields.io/maven-central/v/com.marmoush/java-bom?label=Version&logo=apachemaven)](https://central.sonatype.com/artifact/com.marmoush/java-bom)
-[![Commits since latest release](https://img.shields.io/github/commits-since/ismailmarmoush/java-bom/latest?logo=github)](https://github.com/ismailmarmoush/java-bom/commits/master)
+[![Last Update](https://img.shields.io/maven-central/last-update/com.marmoush/java-bom?label=Updated&logo=apachemaven)](https://central.sonatype.com/artifact/com.marmoush/java-bom)
+[![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Java](https://img.shields.io/badge/Java-26-orange?logo=openjdk)](https://openjdk.org/)
+
 
 # java-bom
 
